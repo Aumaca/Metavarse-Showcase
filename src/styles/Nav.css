@@ -1,0 +1,11 @@
+nav {
+    background-color: #56cbf25d;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 40px 40px;
+}
+
+.content-logo {
+    width: 200px;
+}

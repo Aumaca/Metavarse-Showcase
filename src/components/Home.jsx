@@ -2,14 +2,25 @@ import { useState, useEffect } from "react";
 
 import '../styles/Home.css';
 
+import metaverseImage from '../images/3d-metaverse.png';
+
+import Nav from './Nav';
 import SideNav from "./SideNav";
 
 export default function Home() {
     return (
         <div className="main">
             <SideNav />
+            <Nav />
             <div className="content">
-                <h1>Welcome to the <span className="metaverse-title">Metaverse</span></h1>
+                <div className="home__title">
+                    <p className="title">Welcome to the</p>
+                    <p className="title_metaverse">Metaverse</p>
+                </div>
+                <div className="rectangle"></div>
+                <div className="metaverse_image__container">
+                    <img src={metaverseImage} alt="" />
+                </div>
             </div>
         </div>
     )
