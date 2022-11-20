@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+}
+
+.content {
+    margin-top: 8vh;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.metaverse-title {
+    color: #FAA418;
+    font-style: italic;
+    font-weight: 800;
+}
