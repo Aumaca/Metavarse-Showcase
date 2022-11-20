@@ -1,11 +1,11 @@
-import '../styles/Nav.css';
+import '../styles/Header.css';
 
 import metaLogoTitle from '../images/metaLogoTitle.png';
 
-export default function Nav() {
+export default function Header() {
     return(
-        <nav>
+        <header>
             <img src={metaLogoTitle} className='content-logo' alt="" />
-        </nav>
+        </header>
     )
 }
