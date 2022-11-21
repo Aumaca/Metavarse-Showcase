@@ -20,6 +20,7 @@ export default function SideNav() {
     return (
         <>
             <div className="sidenav__container">
+                <div className={sideNavIsOpen ? "sidenav__background open" : "sidenav__background"}></div>
                 <div className={sideNavIsOpen ? "sidenav open" : "sidenav"}>
                     <div className="header">
                         <img src={metaLogo} alt="" />
