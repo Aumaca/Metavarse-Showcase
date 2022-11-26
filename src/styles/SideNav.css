@@ -1,36 +1,33 @@
 .sidenav__container {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     z-index: 99;
 }
 
-.sidenav__background {
-    left: -80px;
+/* BEGIN sidenav button */
+
+.sidenav__button,
+.sidenav__button__background {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s ease-in-out left;
+}
+
+.sidenav__button__background button {
+    padding: 20px 20px 20px 10px;
+    background-color: white;
     border-radius: 0px 50px 50px 0px;
-    width: 80px;
-    height: 90vh;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    background:white;
-    transition: 0.3s ease-in-out left;
 }
 
-.sidenav__background.open {
-    left: 0px;
+.sidenav__button__background button svg {
+    color: white;
+    height: 30px;
 }
 
-.sidenav__button {
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: 0.3s ease-in-out left;
-}
-
-.sidenav__button.open {
+.sidenav__button.open,
+.sidenav__button__background.open {
     left: 80px;
 }
 
@@ -53,22 +50,36 @@
     color: #0080FB;
 }
 
+/* END sidenav button */
+
+/* BEGIN sidenav */
+
+.sidenav__background {
+    position: absolute;
+}
+
+.sidenav__background,
 .sidenav {
     left: -80px;
     border-radius: 0px 50px 50px 0px;
     width: 80px;
     height: 90vh;
-    position: relative;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    background: #56cbf25d;
+    background: white;
     transition: 0.3s ease-in-out left;
 }
 
+.sidenav__background.open,
 .sidenav.open {
     left: 0px;
+}
+
+.sidenav {
+    position: relative;
+    background: #56cbf25d;
 }
 
 .sidenav .header {
@@ -106,3 +117,5 @@
     color: #0080FB;
     cursor: pointer;
 }
+
+/* END sidenav */

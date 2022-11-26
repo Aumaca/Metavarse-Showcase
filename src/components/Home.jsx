@@ -7,12 +7,16 @@ import { faAngleDown, faAngleUp, faVrCardboard, faArrowUpRightFromSquare, faArro
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 import metaverseImage from '../images/3d-metaverse.png';
+import houseImage from '../images/house.jpg';
+import cityImage from '../images/city.jpg';
 
 import Header from './Header';
 import SideNav from "./SideNav";
 
 export default function Home() {
+    const [offset, setOffset] = useState(0);
     const [youtubeDropdownIsOpen, setYoutubeDropdownIsOpen] = useState(false);
+
 
     function toOpenDropdown(x) {
         if (x === 'youtube') {
@@ -23,6 +27,13 @@ export default function Home() {
             }
         }
     }
+
+    useEffect(() => {
+        const onScroll = () => (setOffset(window.scrollY), console.log(window.scrollY));
+        window.removeEventListener('scroll', onScroll)
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
 
     return (
         <div className="main">
@@ -87,8 +98,27 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="fourth_part">
-
+            </div>
+            <div className="fourth_part">
+                <div className="first">
+                    <div className={offset >= 247 ? "text active" : "text"}>
+                        <h1>Live for a while in a new world</h1>
+                        <h2>In which you can explore, enjoy and even work!</h2>
+                    </div>
+                    <div className={offset >= 247 ? "image__container active" : "image__container"}>
+                        <img src={houseImage} alt="" />
+                    </div>
+                </div>
+                <div className="second">
+                    <div className={offset >= 700 ? "text active" : "text"}>
+                        <h1>Entertain yourself in the city</h1>
+                        <h2>To watch movies... Go to the party?</h2>
+                        <h2>Or play cards with your mates?</h2>
+                        <h2>You know!</h2>
+                    </div>
+                    <div className={offset >= 700 ? "image__container active" : "image__container"}>
+                        <img src={cityImage} alt="" />
+                    </div>
                 </div>
             </div>
         </div>

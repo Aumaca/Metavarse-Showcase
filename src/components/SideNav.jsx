@@ -42,6 +42,11 @@ export default function SideNav() {
                         </ul>
                     </div>
                 </div>
+                <div className={sideNavIsOpen ? "sidenav__button__background open" : "sidenav__button__background"}>
+                    <button>
+                        <FontAwesomeIcon icon={sideNavIsOpen ? faAngleLeft : faAngleRight} />
+                    </button>
+                </div>
                 <div className={sideNavIsOpen ? "sidenav__button open" : "sidenav__button"} onClick={() => openSideNav()}>
                     <button>
                         <FontAwesomeIcon icon={sideNavIsOpen ? faAngleLeft : faAngleRight} />

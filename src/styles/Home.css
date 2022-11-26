@@ -1,7 +1,17 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #56cbf2;
+    border-radius: 50px;
+}
+
 .content {
     margin: 10px 30px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .home__title {
@@ -82,6 +92,7 @@
     border-radius: 40px;
     padding: 20px;
     color: white;
+    position: relative;
 }
 
 .youtube__apresentation:hover {
@@ -146,7 +157,8 @@
 }
 
 .third_part {
-    margin-top: 50px;
+    margin-top: 70px;
+    bottom: 0;
 }
 
 .third_part .arrow {
@@ -159,6 +171,93 @@
     font-size: 35px;
 }
 
+/* Fourth part */
+
+.fourth_part {
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+    overflow-x: hidden;
+}
+
+.fourth_part .first,
+.fourth_part .second {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fourth_part .first *,
+.fourth_part .second * {
+    position: relative;
+}
+
+.fourth_part .image__container,
+.fourth_part .text {
+    transition: 1s ease-in-out;
+}
+
+.fourth_part img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* BEGIN Fourth part - first */
+
+.fourth_part .first .text {
+    left: calc(-100vw - 50px);
+    color: white;
+}
+
+.fourth_part .first .text.active {
+    left: 0px;
+}
+
+.fourth_part .first .text h1 {
+    color: rgb(255, 217, 0);
+}
+
+.fourth_part .first .image__container {
+    right: calc(-100vw - 50px);
+}
+
+.fourth_part .first .image__container.active {
+    right: 0;
+}
+
+/* END Fourth part - first */
+
+/* BEGIN Fourth part - second */
+
+.fourth_part .second .text h1 {
+    color: #0575E6;
+}
+
+.fourth_part .second .text {
+    text-align: right;
+    right: calc(-100vw - 50px);
+    color: white;
+}
+
+.fourth_part .second .text.active {
+    right: 0;
+}
+
+.fourth_part .second .image__container {
+    left: calc(-100vw - 50px);
+}
+
+.fourth_part .second .image__container.active {
+    left: 0;
+}
+
+/* END Fourth part - second */
+
 /* For medium screen */
 @media screen and (min-width: 768px) {
     .first_part {
@@ -167,6 +266,10 @@
 
     .second_part {
         margin: 25px 100px 0px 100px;
+    }
+
+    .third_part {
+        margin-top: 30px;
     }
 
     .rectangle {
@@ -218,6 +321,17 @@
 
     .second_part {
         margin: 25px 200px 0px 200px;
+    }
+
+    .third_part {
+        margin-top: 60px;
+    }
+
+    .fourth_part .first,
+    .fourth_part .second {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
     }
 }
 
